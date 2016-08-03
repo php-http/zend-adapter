@@ -1,0 +1,43 @@
+{
+    "name": "php-http/zend-adapter",
+    "description": "Zend Adapter for HTTPlug",
+    "license": "MIT",
+    "keywords": ["zend", "httplug", "client", "http"],
+    "homepage": "http://php-http.org",
+    "authors": [
+        {
+            "name": "Joel Wurtz",
+            "email": "joel.wurtz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.4 || ^7.0",
+        "php-http/httplug": "^1.0",
+        "php-http/discovery": "^1.0",
+        "zendframework/zend-http": "^2.0"
+    },
+    "require-dev": {
+        "php-http/client-integration-tests": "^0.5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Http\\Adapter\\Zend\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Http\\Adapter\\Zend\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-ci": "vendor/bin/phpunit --coverage-clover build/coverage.xml"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
