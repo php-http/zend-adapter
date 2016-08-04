@@ -29,6 +29,9 @@
             "Http\\Adapter\\Zend\\Tests\\": "tests/"
         }
     },
+    "provide": {
+        "php-http/client-implementation": "1.0"
+    },
     "scripts": {
         "test": "vendor/bin/phpunit",
         "test-ci": "vendor/bin/phpunit --coverage-clover build/coverage.xml"
