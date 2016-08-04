@@ -23,10 +23,7 @@ class Client implements HttpClient
 
     public function __construct(ZendClient $client = null, ResponseFactory $responseFactory = null)
     {
-        $this->client = $client ?: new ZendClient(null, [
-            'maxredirects' => 0,
-            'storeresponse' => false,
-        ]);
+        $this->client = $client ?: new ZendClient();
         $this->responseFactory = $responseFactory ?: MessageFactoryDiscovery::find();
     }
 
