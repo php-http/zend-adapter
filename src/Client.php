@@ -103,7 +103,10 @@ class Client implements HttpClient
     }
 
     /**
-     * Get specific curl options for Zend Curl Adapter.
+     * On cUrl Adapter, zend does not include the body if it's not a POST, PUT or PATCH request but does not
+     * rewrite the content length header.
+     * This can lead to error from the server has it can expect a specific content length, but don't have
+     * a body, so we set content-length to 0 to avoid bad reading from the server.
      *
      * @param RequestInterface $request
      *
