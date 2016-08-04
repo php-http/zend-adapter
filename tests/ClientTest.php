@@ -45,6 +45,7 @@ abstract class ClientTest extends HttpClientTest
             $body
         );
     }
+
     /**
      * @dataProvider requestWithOutcomeProvider
      * @group        integration
