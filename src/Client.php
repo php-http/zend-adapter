@@ -106,7 +106,7 @@ class Client implements HttpClient
     }
 
     /**
-     * Get specific curl options for Zend Curl Adapter
+     * Get specific curl options for Zend Curl Adapter.
      *
      * @param RequestInterface $request
      *
@@ -117,9 +117,8 @@ class Client implements HttpClient
         if ($this->client->getAdapter() instanceof ZendClient\Adapter\Curl && !in_array($request->getMethod(), [
                 'POST',
                 'PUT',
-                'PATCH'
+                'PATCH',
             ], true)) {
-
             $request = $request->withHeader('Content-Length', '0');
         }
 
@@ -127,7 +126,7 @@ class Client implements HttpClient
     }
 
     /**
-     * Return cURL constant for specified HTTP version
+     * Return cURL constant for specified HTTP version.
      *
      * @param string $requestVersion
      *
