@@ -27,4 +27,43 @@ abstract class ClientTest extends HttpClientTest
 
         return false;
     }
+
+    /**
+     * @dataProvider requestProvider
+     * @group        integration
+     */
+    public function testSendRequest($method, $uri, array $headers, $body)
+    {
+        if (($reason = $this->shouldBeSkip($method, $uri, $headers, $body)) !== false) {
+            self::markTestSkipped($reason);
+        }
+
+        parent::testSendRequest(
+            $method,
+            $uri,
+            $headers,
+            $body
+        );
+    }
+    /**
+     * @dataProvider requestWithOutcomeProvider
+     * @group        integration
+     */
+    public function testSendRequestWithOutcome(
+        $uriAndOutcome,
+        $protocolVersion,
+        array $headers,
+        $body
+    ) {
+        if (($reason = $this->shouldBeSkip('GET', $uriAndOutcome[0], $headers, $body)) !== false) {
+            self::markTestSkipped($reason);
+        }
+
+        parent::testSendRequestWithOutcome(
+            $uriAndOutcome,
+            $protocolVersion,
+            $headers,
+            $body
+        );
+    }
 }
