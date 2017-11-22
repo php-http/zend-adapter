@@ -21,7 +21,7 @@ abstract class ClientTest extends HttpClientTest
 
     protected function shouldBeSkip($method, $uri, array $headers, $body)
     {
-        if ($method === 'TRACE' && strlen($body) > 0) {
+        if ('TRACE' === $method && strlen($body) > 0) {
             return 'Zend Http Adapter does not work well with TRACE method and a BODY';
         }
 
@@ -34,7 +34,7 @@ abstract class ClientTest extends HttpClientTest
      */
     public function testSendRequest($method, $uri, array $headers, $body)
     {
-        if (($reason = $this->shouldBeSkip($method, $uri, $headers, $body)) !== false) {
+        if (false !== ($reason = $this->shouldBeSkip($method, $uri, $headers, $body))) {
             self::markTestSkipped($reason);
         }
 
@@ -56,7 +56,7 @@ abstract class ClientTest extends HttpClientTest
         array $headers,
         $body
     ) {
-        if (($reason = $this->shouldBeSkip('GET', $uriAndOutcome[0], $headers, $body)) !== false) {
+        if (false !== ($reason = $this->shouldBeSkip('GET', $uriAndOutcome[0], $headers, $body))) {
             self::markTestSkipped($reason);
         }
 

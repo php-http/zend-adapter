@@ -95,7 +95,7 @@ class Client implements HttpClient
      */
     private function sanitizeWithTrace(RequestInterface $request)
     {
-        if ($request->getMethod() === 'TRACE') {
+        if ('TRACE' === $request->getMethod()) {
             $request = $request->withHeader('Content-Length', '0');
         }
 
@@ -145,6 +145,7 @@ class Client implements HttpClient
                 if (defined('CURL_HTTP_VERSION_2_0')) {
                     return CURL_HTTP_VERSION_2_0;
                 }
+
                 throw new \UnexpectedValueException('libcurl 7.33 needed for HTTP 2.0 support');
         }
 
