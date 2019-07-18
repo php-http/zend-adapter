@@ -92,7 +92,7 @@ class Client implements HttpClient
      *
      * @param RequestInterface $request
      *
-     * @return RequestInterface|static
+     * @return RequestInterface
      */
     private function sanitizeWithTrace(RequestInterface $request)
     {
@@ -111,7 +111,7 @@ class Client implements HttpClient
      *
      * @param RequestInterface $request
      *
-     * @return RequestInterface|static
+     * @return RequestInterface
      */
     private function sanitizeWithCurl(RequestInterface $request)
     {
