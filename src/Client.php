@@ -7,6 +7,7 @@ use Http\Client\HttpClient;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\ResponseFactory;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Zend\Http\Client as ZendClient;
 use Zend\Http\Exception\RuntimeException;
 use Zend\Http\Header\GenericHeader;
@@ -30,7 +31,7 @@ class Client implements HttpClient
     /**
      * {@inheritdoc}
      */
-    public function sendRequest(RequestInterface $request)
+    public function sendRequest(RequestInterface $request): ResponseInterface
     {
         $request = $this->sanitizeRequest($request);
         $headers = new Headers();
