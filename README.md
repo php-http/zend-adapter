@@ -7,6 +7,14 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/zend-adapter.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/zend-adapter)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/zend-adapter.svg?style=flat-square)](https://packagist.org/packages/php-http/zend-adapter)
 
+# Deprecated
+
+Zend framework meanwhile has been renamed to Laminas, and the client is no
+longer maintained.
+
+This adapter only implements the PHP-HTTP synchronous interface. This interface
+has been superseded by PSR-18, which the Laminas Diactoros client implements
+directly.
 
 ## Install
 
